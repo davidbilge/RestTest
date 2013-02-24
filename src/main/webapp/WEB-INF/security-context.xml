@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:sec="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<sec:http realm="Protected API" use-expressions="true" auto-config="false" create-session="stateless"
+		entry-point-ref="notAuthorizedEntryPoint" authentication-manager-ref="authenticationManager">
+
+		<sec:custom-filter ref="tokenProcessingFilter" position="FORM_LOGIN_FILTER" />
+		<sec:intercept-url pattern="/authenticate" access="permitAll" />
+		<sec:intercept-url pattern="/**" access="isAuthenticated()" />
+	</sec:http>
+
+	<bean id="notAuthorizedEntryPoint" class="de.davidbilge.resttest.security.NotAuthorizedEntryPoint" />
+
+	<bean id="tokenProcessingFilter" class="de.davidbilge.resttest.security.TokenProcessingFilter">
+		<property name="authenticationManager" ref="authenticationManager" />
+		<property name="userDetailsService" ref="userDetailsService" />
+	</bean>
+
+	<sec:authentication-manager id="authenticationManager">
+		<sec:authentication-provider>
+			<sec:password-encoder hash="sha-256" />
+			<sec:user-service id="userDetailsService">
+				<!-- Password is "Password123" -->
+				<sec:user name="Test-User" password="008c70392e3abfbd0fa47bbc2ed96aa99bd49e159727fcba0f2e6abeb3a9d601" authorities="ROLE_ACCESS" />
+			</sec:user-service>
+		</sec:authentication-provider>
+	</sec:authentication-manager>
+
+</beans>
