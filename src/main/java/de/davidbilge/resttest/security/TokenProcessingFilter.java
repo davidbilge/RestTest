@@ -11,11 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.GenericFilterBean;
 
 public class TokenProcessingFilter extends GenericFilterBean {
@@ -23,7 +20,7 @@ public class TokenProcessingFilter extends GenericFilterBean {
 
 	private AuthenticationManager authenticationManager;
 
-	private UserDetailsService userDetailsService;
+	private TokenService tokenService;
 
 	@Override
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -39,18 +36,12 @@ public class TokenProcessingFilter extends GenericFilterBean {
 
 		if (tokenHeader != null && !"".equals(tokenHeader)) {
 			LOGGER.info("Found token header with value \"" + tokenHeader + "\".");
+			Authentication authentication = tokenService.getAuthentication(tokenHeader);
+			if (authentication != null) {
+				SecurityContextHolder.getContext().setAuthentication(authentication);
+				LOGGER.info("Authenticated user " + authentication.getName());
+			}
 		}
-
-		// Very dumb authentication scheme for first try
-		UserDetails userDetails = getUserDetailsService().loadUserByUsername("Test-User");
-		UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
-				userDetails.getUsername(), "Password123");
-		authToken.setDetails(new WebAuthenticationDetailsSource()
-				.buildDetails((HttpServletRequest) request));
-		SecurityContextHolder.getContext().setAuthentication(
-				getAuthenticationManager().authenticate(authToken));
-
-		LOGGER.info("Authenticated user " + userDetails.getUsername());
 
 		// Continue chain
 		chain.doFilter(request, response);
@@ -64,12 +55,12 @@ public class TokenProcessingFilter extends GenericFilterBean {
 		this.authenticationManager = authenticationManager;
 	}
 
-	public UserDetailsService getUserDetailsService() {
-		return userDetailsService;
+	public TokenService getTokenService() {
+		return tokenService;
 	}
 
-	public void setUserDetailsService(UserDetailsService userDetailsService) {
-		this.userDetailsService = userDetailsService;
+	public void setTokenService(TokenService tokenService) {
+		this.tokenService = tokenService;
 	}
 
 }

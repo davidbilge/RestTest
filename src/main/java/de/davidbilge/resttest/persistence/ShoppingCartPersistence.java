@@ -15,39 +15,32 @@ import de.davidbilge.resttest.model.ShoppingCart;
 @Component
 public class ShoppingCartPersistence {
 
-	private Map<Long, ShoppingCart> carts = new HashMap<>();
+	private Map<String, ShoppingCart> carts = new HashMap<>();
 
 	@PostConstruct
-	public void addDemoCarts()  {
+	public void addDemoCarts() {
 		ShoppingCart s = new ShoppingCart();
-		
+
 		Item i = new Item();
 		i.setName("Fancy product");
 		i.setPrice(new BigDecimal("23.42"));
 		s.addItem(i);
-		
+
 		i = new Item();
 		i.setName("Another product");
 		i.setCurrency(Currency.getInstance("USD"));
 		i.setPrice(new BigDecimal("13.37"));
 		s.addItem(i);
-		
-		carts.put(1L, s);
-	}
-	
-	public ShoppingCart findShoppingCart(Long id) {
-		return carts.get(id);
+
+		carts.put("Test-User", s);
 	}
 
-	public Long addShoppingCart(ShoppingCart shoppingCart) {
-		long newId = carts.size() + 1;
+	public ShoppingCart findShoppingCart(String username) {
+		return carts.get(username);
+	}
 
-		while (carts.containsKey(newId)) {
-			newId++;
-		}
-
-		carts.put(newId, shoppingCart);
-		return newId;
+	public void addShoppingCart(String username, ShoppingCart shoppingCart) {
+		carts.put(username, shoppingCart);
 	}
 
 }
