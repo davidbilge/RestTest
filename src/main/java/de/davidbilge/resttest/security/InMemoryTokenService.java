@@ -3,8 +3,11 @@ package de.davidbilge.resttest.security;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.PostConstruct;
+
 import org.joda.time.DateTime;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 
 public class InMemoryTokenService implements TokenService {
@@ -13,6 +16,12 @@ public class InMemoryTokenService implements TokenService {
 	private AuthenticationManager authenticationManager;
 
 	private int tokenExpirationSeconds;
+
+	@PostConstruct
+	public void init() {
+		// Provide a default authentication token. For testing purposes only!
+		authenticate(new UsernamePasswordAuthenticationToken("Test-User", "Password123"), "___TEST_TOKEN___");
+	}
 
 	@Override
 	public Authentication getAuthentication(String tokenCode) {
@@ -42,7 +51,7 @@ public class InMemoryTokenService implements TokenService {
 		t.setAuthenticatedUser(authdAuthentication.getName());
 		t.setAuthentication(authdAuthentication);
 		t.setExpiration(DateTime.now().plusSeconds(getTokenExpirationSeconds()));
-		
+
 		authenticationCache.put(tokenCode, t);
 	}
 

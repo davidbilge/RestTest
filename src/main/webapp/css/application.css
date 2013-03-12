@@ -1,0 +1,10 @@
+.leftpopout {
+    position: absolute;
+    top: 0;
+    left: -640px;
+    width: 580px
+}
+
+.navitem {
+    position: relative;
+}

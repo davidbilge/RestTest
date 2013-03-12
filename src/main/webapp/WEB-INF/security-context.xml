@@ -4,16 +4,18 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<sec:global-method-security secured-annotations="enabled"
-		jsr250-annotations="enabled" />
+	<sec:global-method-security secured-annotations="enabled" jsr250-annotations="enabled" />
 
-	
 	<sec:http realm="Protected API" use-expressions="true" auto-config="false" create-session="stateless"
-		entry-point-ref="notAuthorizedEntryPoint" authentication-manager-ref="authenticationManager">
+		entry-point-ref="notAuthorizedEntryPoint" authentication-manager-ref="authenticationManager"
+		access-decision-manager-ref="accessDecisionManager">
+
+		<sec:anonymous />
 
 		<sec:custom-filter ref="tokenProcessingFilter" position="FORM_LOGIN_FILTER" />
 		<sec:intercept-url pattern="/tokens/**" access="permitAll" />
-		<sec:intercept-url pattern="/api/**" access="isAuthenticated()" />
+		<sec:intercept-url pattern="/api/**" access="permitAll" />
+		<!-- <sec:intercept-url pattern="/api/**" access="isAuthenticated()" /> -->
 	</sec:http>
 
 	<bean id="notAuthorizedEntryPoint" class="de.davidbilge.resttest.security.NotAuthorizedEntryPoint" />
@@ -38,5 +40,14 @@
 			</sec:user-service>
 		</sec:authentication-provider>
 	</sec:authentication-manager>
+
+	<bean id="accessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+		<constructor-arg name="decisionVoters">
+			<list>
+				<bean class="org.springframework.security.access.annotation.Jsr250Voter" />
+				<bean class="org.springframework.security.web.access.expression.WebExpressionVoter" />
+			</list>
+		</constructor-arg>
+	</bean>
 
 </beans>

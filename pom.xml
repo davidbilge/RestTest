@@ -99,6 +99,12 @@
 			<artifactId>jackson-mapper-asl</artifactId>
 			<version>1.9.12</version>
 		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson</groupId>
+			<artifactId>jackson-datatype-guava</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+
 
 		<dependency>
 			<groupId>com.google.guava</groupId>
