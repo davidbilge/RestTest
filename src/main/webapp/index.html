@@ -23,33 +23,33 @@
     <script src="js/vendor/modernizr-2.6.2.min.js"></script>
     <script src="js/vendor/bootstrap.js"></script>
 </head>
-<body ng-app>
+<body ng-app="calculator">
 <!--[if lt IE 7]>
 <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to
     improve your experience.</p>
 <![endif]-->
 
-<div class="container">
+<div class="container" ng-controller="calculatorController">
     <div class="row">
         <div class="span8">
             TEST
         </div>
 
-        <ul class="well nav nav-list span3">
+        <ul class="well nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
-                <a href="#">Produkt: Broschüre</a>
+                <a href="#" class="popout-open" popout-trigger>Produkt: Broschüre</a>
 
-                <div class="well leftpopout">DIES IST EIN TEST</div>
+                <div class="well popout popout-closed">DIES IST EIN TEST</div>
             </li>
             <li class="navitem">
-                <a href="#">Auflage: 1000 Seiten</a>
+                <a href="#" popout-trigger>Auflage: 1000 Seiten</a>
 
-                <div class="well leftpopout">DIES IST EIN TEST</div>
+                <div class="well popout popout-closed">DIES IST EIN TEST</div>
             </li>
             <li class="navitem">
-                <a href="#">Versandart: Express</a>
+                <a href="#" popout-trigger>Versandart: Express</a>
             </li>
             <li class="nav-header">Ihre Konfiguration</li>
         </ul>

@@ -1,4 +1,4 @@
-.leftpopout {
+.popout {
     position: absolute;
     top: 0;
     left: -640px;
@@ -7,4 +7,12 @@
 
 .navitem {
     position: relative;
+}
+
+.popout-open {
+    display: block;
+}
+
+.popout-closed {
+    display: none;
 }
