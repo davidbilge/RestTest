@@ -1,11 +1,17 @@
-function calculatorController($scope) {
+function calculatorController($scope, $window, Products) {
+    $scope.products = Products.query();
 
+    $scope.selectedProductName = 'booklet';
+
+    $scope.setProductName = function(name) {
+        $scope.selectedProductName = name;
+    }
 }
 
 angular.module('calculator.directive', [])
-    .directive('popoutTrigger', function() {
+    .directive('popoutTrigger', function () {
         return {
-                link: function(scope, element, attrs) {
+            link: function (scope, element, attrs) {
                 element.bind('click', toggle);
 
                 scope.visible = null;
@@ -32,4 +38,19 @@ angular.module('calculator.directive', [])
 
     });
 
-angular.module('calculator', ['calculator.directive']);
+angular.module('calculator.services', ['ngResource']).
+    factory('Products', function ($resource) {
+        return $resource('http://localhost\\:8080/resttest/api/products/:productName/', {}, {
+            query: {method: 'GET', params: {productName: '@name'}, isArray: true}
+        });
+    });
+
+angular.module('calculator.routers', [])
+    .config(function ($routeProvider) {
+        $routeProvider
+            .when('/products/:selectedProduct', {controller: calculatorController, reloadOnSearch: false})
+            .when('/products', {redirectTo: '/products/booklet'})
+            .otherwise({redirectTo: '/products/booklet'});
+    });
+
+angular.module('calculator', ['calculator.directive', 'calculator.services']);

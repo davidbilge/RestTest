@@ -51,7 +51,7 @@ public class ProductController {
 	}
 
 	@ResponseBody
-	@RequestMapping(value = "/", method = RequestMethod.GET)
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	public List<Product> getAllProducts() {
 		return products;
 	}

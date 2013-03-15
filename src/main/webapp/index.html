@@ -39,17 +39,24 @@
         <ul class="well nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
-                <a href="#" class="popout-open" popout-trigger>Produkt: Broschüre</a>
+                <a class="popout-open" popout-trigger>Produkt: Broschüre</a>
+
+                <div class="well popout popout-closed">
+                    Selected product: {{selectedProductName}}
+
+                    <ul ng-repeat="product in products">
+                        <li> <a href="#" ng-click="setProductName(product.name)">{{product.name}}</a></li>
+                    </ul>
+
+                </div>
+            </li>
+            <li class="navitem">
+                <a popout-trigger>Auflage: 1000 Seiten</a>
 
                 <div class="well popout popout-closed">DIES IST EIN TEST</div>
             </li>
             <li class="navitem">
-                <a href="#" popout-trigger>Auflage: 1000 Seiten</a>
-
-                <div class="well popout popout-closed">DIES IST EIN TEST</div>
-            </li>
-            <li class="navitem">
-                <a href="#" popout-trigger>Versandart: Express</a>
+                <a popout-trigger>Versandart: Express</a>
             </li>
             <li class="nav-header">Ihre Konfiguration</li>
         </ul>
@@ -63,6 +70,7 @@
 
 <script src="js/vendor/jquery-1.9.0.min.js"></script>
 <script src="js/vendor/angular-1.0.5.js"></script>
+<script src="js/vendor/angular-resource.js"></script>
 <script src="js/plugins.js"></script>
 <script src="js/main.js"></script>
 
