@@ -1,11 +1,12 @@
 function calculatorController($scope, $window, Products) {
     $scope.products = Products.query();
 
-    $scope.selectedProductName = 'booklet';
-
     $scope.setProductName = function(name) {
         $scope.selectedProductName = name;
+        $scope.product = Products.get({productName: name});
     }
+
+    $scope.setProductName('booklet');
 }
 
 angular.module('calculator.directive', [])

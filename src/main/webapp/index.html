@@ -39,15 +39,12 @@
         <ul class="well nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
-                <a class="popout-open" popout-trigger>Produkt: Broschüre</a>
+                <a class="popout-open" popout-trigger>Produkt: {{product.name}}</a>
 
                 <div class="well popout popout-closed">
-                    Selected product: {{selectedProductName}}
-
                     <ul ng-repeat="product in products">
                         <li> <a href="#" ng-click="setProductName(product.name)">{{product.name}}</a></li>
                     </ul>
-
                 </div>
             </li>
             <li class="navitem">

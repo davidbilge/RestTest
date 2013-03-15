@@ -4,8 +4,8 @@
     <list default="true" id="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" name="Default" comment="" />
     <ignored path="webapp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363360770954" ignored="false" />
-    <file path="/main.js" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363360741062" ignored="false" />
+    <file path="/index.html" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363362846269" ignored="false" />
+    <file path="/main.js" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363362811325" ignored="false" />
     <file path="/application.css" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363177410852" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,22 +26,22 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="78" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.6754015">
+            <state line="41" column="77" selection-start="1614" selection-end="1614" vertical-scroll-proportion="-26.807692">
               <folding>
-                <marker date="1363360770903" expanded="true" signature="978:1230" placeholder="..." />
-                <marker date="1363360770903" expanded="true" signature="1071:1099" placeholder="..." />
+                <marker date="1363362846202" expanded="true" signature="978:1230" placeholder="..." />
+                <marker date="1363362846202" expanded="true" signature="1071:1099" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="main.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="25" selection-start="156" selection-end="170" vertical-scroll-proportion="0.0">
+            <state line="5" column="25" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0695581">
               <folding />
             </state>
           </provider>
@@ -359,8 +359,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="25" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1363360770903" expanded="true" signature="978:1230" placeholder="..." />
-            <marker date="1363360770903" expanded="true" signature="1071:1099" placeholder="..." />
+            <marker date="1363362846202" expanded="true" signature="978:1230" placeholder="..." />
+            <marker date="1363362846202" expanded="true" signature="1071:1099" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -417,20 +417,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/main.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="25" selection-start="156" selection-end="170" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="41" column="77" selection-start="1614" selection-end="1614" vertical-scroll-proportion="-26.807692">
+          <folding>
+            <marker date="1363362846202" expanded="true" signature="978:1230" placeholder="..." />
+            <marker date="1363362846202" expanded="true" signature="1071:1099" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
+    <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="78" selection-start="1869" selection-end="1869" vertical-scroll-proportion="0.6754015">
-          <folding>
-            <marker date="1363360770903" expanded="true" signature="978:1230" placeholder="..." />
-            <marker date="1363360770903" expanded="true" signature="1071:1099" placeholder="..." />
-          </folding>
+        <state line="5" column="25" selection-start="213" selection-end="213" vertical-scroll-proportion="0.0695581">
+          <folding />
         </state>
       </provider>
     </entry>
