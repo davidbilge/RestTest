@@ -9,6 +9,15 @@
     position: relative;
 }
 
+.nav {
+    /* Fallback for web browsers that doesn't support RGBa */
+    background: rgb(245, 245, 245);
+    /* RGBa with 0.6 opacity */
+    background: rgba(245, 245, 245, 0.8);
+    min-height: 490px;
+
+}
+
 .nav > li > a {
     cursor: pointer;
 }
@@ -19,4 +28,11 @@
 
 .popout-closed {
     display: none;
+}
+
+.main-comp {
+    height: 490px;
+    overflow: visible;
+    transition: background 0.5s linear;
+    -webkit-transition: background 0.5s linear;
 }

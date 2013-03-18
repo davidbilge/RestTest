@@ -30,13 +30,12 @@
     improve your experience.</p>
 <![endif]-->
 
-<div class="container" ng-controller="calculatorController">
+<div class="container main-comp" ng-controller="calculatorController"
+     ng-style="{background: 'url(img/product-bgs/' + selectedProductName + '.jpg)'}">
     <div class="row">
-        <div class="span8">
-            TEST
-        </div>
+        <div class="span8"></div>
 
-        <ul class="well nav nav-list span3 popout-container">
+        <ul class="nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
                 <a ng-click="setOpenPopoutMenu('product_selection')">Produkt: {{product.name}}</a>
@@ -50,7 +49,7 @@
                 </div>
             </li>
             <li class="navitem">
-                <a  ng-click="setOpenPopoutMenu('circulation_selection')">Auflage: 1000 Seiten</a>
+                <a ng-click="setOpenPopoutMenu('circulation_selection')">Auflage: 1000 Seiten</a>
 
                 <div class="well popout" ng-show="openPopoutMenu == 'circulation_selection'">DIES IST EIN TEST</div>
             </li>
@@ -60,7 +59,8 @@
 
             <li class="nav-header">Ihre Konfiguration</li>
             <li class="navitem" ng-repeat="(parameterName, parameterValues) in product.parameters">
-                <a class="popout-open" ng-click="setOpenPopoutMenu('param' + parameterName)">{{parameterName}}: {{parameterValues[0]}}</a>
+                <a class="popout-open" ng-click="setOpenPopoutMenu('param' + parameterName)">{{parameterName}}:
+                    {{parameterValues[0]}}</a>
 
                 <div class="well popout" ng-show="openPopoutMenu == 'param' + parameterName">
                     <ul>

@@ -4,9 +4,9 @@
     <list default="true" id="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" name="Default" comment="" />
     <ignored path="webapp.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/index.html" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363600513876" ignored="false" />
-    <file path="/main.js" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363600361654" ignored="false" />
-    <file path="/application.css" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363600763504" ignored="false" />
+    <file path="/index.html" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363606488692" ignored="false" />
+    <file path="/main.js" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363602444091" ignored="false" />
+    <file path="/application.css" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363607334273" ignored="false" />
     <file path="/dummy.xml" changelist="10aa19e1-3f8c-4eeb-a145-0a92a7396f24" time="1363592722570" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,13 +27,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="19" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-15.730769">
+            <state line="46" column="75" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.32967034">
               <folding>
-                <marker date="1363600726929" expanded="true" signature="978:1230" placeholder="..." />
-                <marker date="1363600726929" expanded="true" signature="1071:1099" placeholder="..." />
+                <marker date="1363607355703" expanded="true" signature="978:1230" placeholder="..." />
+                <marker date="1363607355703" expanded="true" signature="1071:1099" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -42,16 +42,16 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="42" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+            <state line="40" column="63" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="19" selection-start="162" selection-end="162" vertical-scroll-proportion="0.16693944">
+            <state line="15" column="44" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -67,9 +67,9 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/js/main.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/css/application.css" />
+        <option value="$PROJECT_DIR$/js/main.js" />
       </list>
     </option>
   </component>
@@ -178,6 +178,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="product-bgs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -360,8 +392,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="25" selection-start="2129" selection-end="2129" vertical-scroll-proportion="0.0">
           <folding>
-            <marker date="1363600726929" expanded="true" signature="978:1230" placeholder="..." />
-            <marker date="1363600726929" expanded="true" signature="1071:1099" placeholder="..." />
+            <marker date="1363607355703" expanded="true" signature="978:1230" placeholder="..." />
+            <marker date="1363607355703" expanded="true" signature="1071:1099" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -411,27 +443,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="19" selection-start="1556" selection-end="1556" vertical-scroll-proportion="-15.730769">
-          <folding>
-            <marker date="1363600726929" expanded="true" signature="978:1230" placeholder="..." />
-            <marker date="1363600726929" expanded="true" signature="1071:1099" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="42" selection-start="574" selection-end="574" vertical-scroll-proportion="0.0">
+        <state line="40" column="63" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/css/application.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="19" selection-start="162" selection-end="162" vertical-scroll-proportion="0.16693944">
+        <state line="15" column="44" selection-start="305" selection-end="305" vertical-scroll-proportion="0.0">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="46" column="75" selection-start="2007" selection-end="2007" vertical-scroll-proportion="0.32967034">
+          <folding>
+            <marker date="1363607355703" expanded="true" signature="978:1230" placeholder="..." />
+            <marker date="1363607355703" expanded="true" signature="1071:1099" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
