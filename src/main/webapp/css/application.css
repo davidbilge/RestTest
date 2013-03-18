@@ -1,12 +1,16 @@
 .popout {
-    position: absolute;
-    top: 0;
-    left: -640px;
-    width: 580px
-}
+     position: absolute;
+     top: 0;
+     left: -640px;
+     width: 580px
+ }
 
 .navitem {
     position: relative;
+}
+
+.nav > li > a {
+    cursor: pointer;
 }
 
 .popout-open {

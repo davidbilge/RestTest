@@ -37,12 +37,12 @@ public class ProductController {
 		products.add(new Product("booklet", bookletParams));
 
 		Multimap<String, String> bcardParams = ArrayListMultimap.create();
-		bookletParams.put("format", "bcard_landscape");
-		bookletParams.put("format", "bcard_portrait");
-		bookletParams.put("paper", "300g_matte");
-		bookletParams.put("paper", "250g_handmade");
-		bookletParams.put("color", "4/0");
-		bookletParams.put("color", "4/4");
+		bcardParams.put("format", "bcard_landscape");
+		bcardParams.put("format", "bcard_portrait");
+		bcardParams.put("paper", "300g_matte");
+		bcardParams.put("paper", "250g_handmade");
+		bcardParams.put("color", "4/0");
+		bcardParams.put("color", "4/4");
 		products.add(new Product("bcard", bcardParams));
 
 		products.add(new Product("hardcover", ArrayListMultimap.<String, String> create()));

@@ -39,23 +39,38 @@
         <ul class="well nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
-                <a class="popout-open" popout-trigger>Produkt: {{product.name}}</a>
+                <a ng-click="setOpenPopoutMenu('product_selection')">Produkt: {{product.name}}</a>
 
-                <div class="well popout popout-closed">
-                    <ul ng-repeat="product in products">
-                        <li> <a href="#" ng-click="setProductName(product.name)">{{product.name}}</a></li>
+                <div class="well popout" ng-show="openPopoutMenu == 'product_selection'">
+                    <ul>
+                        <li ng-repeat="product in products">
+                            <a href="#" ng-click="setProductName(product.name)">{{product.name}}</a>
+                        </li>
                     </ul>
                 </div>
             </li>
             <li class="navitem">
-                <a popout-trigger>Auflage: 1000 Seiten</a>
+                <a  ng-click="setOpenPopoutMenu('circulation_selection')">Auflage: 1000 Seiten</a>
 
-                <div class="well popout popout-closed">DIES IST EIN TEST</div>
+                <div class="well popout" ng-show="openPopoutMenu == 'circulation_selection'">DIES IST EIN TEST</div>
             </li>
             <li class="navitem">
                 <a popout-trigger>Versandart: Express</a>
             </li>
+
             <li class="nav-header">Ihre Konfiguration</li>
+            <li class="navitem" ng-repeat="(parameterName, parameterValues) in product.parameters">
+                <a class="popout-open" ng-click="setOpenPopoutMenu('param' + parameterName)">{{parameterName}}: {{parameterValues[0]}}</a>
+
+                <div class="well popout" ng-show="openPopoutMenu == 'param' + parameterName">
+                    <ul>
+                        <li ng-repeat="parameterValue in parameterValues">
+                            {{parameterValue}}
+                        </li>
+                    </ul>
+                </div>
+            </li>
+
         </ul>
     </div>
 </div>
