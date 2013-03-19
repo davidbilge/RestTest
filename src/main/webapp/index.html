@@ -38,12 +38,12 @@
         <ul class="nav nav-list span3 popout-container">
             <li class="nav-header">Ihr Produkt</li>
             <li class="navitem">
-                <a ng-click="setOpenPopoutMenu('product_selection')">Produkt: {{product.name}}</a>
+                <a ng-click="setOpenPopoutMenu('product_selection')">Produkt: {{product.name | i18n}}</a>
 
                 <div class="well popout" ng-show="openPopoutMenu == 'product_selection'">
                     <ul>
                         <li ng-repeat="product in products">
-                            <a href="#" ng-click="setProductName(product.name)">{{product.name}}</a>
+                            <a href="#" ng-click="setProductName(product.name)">{{product.name | i18n}}</a>
                         </li>
                     </ul>
                 </div>
@@ -59,13 +59,13 @@
 
             <li class="nav-header">Ihre Konfiguration</li>
             <li class="navitem" ng-repeat="(parameterName, parameterValues) in product.parameters">
-                <a class="popout-open" ng-click="setOpenPopoutMenu('param' + parameterName)">{{parameterName}}:
-                    {{parameterValues[0]}}</a>
+                <a class="popout-open" ng-click="setOpenPopoutMenu('param' + parameterName)">{{parameterName | i18n}}:
+                    {{parameterValues[0] | i18n}}</a>
 
                 <div class="well popout" ng-show="openPopoutMenu == 'param' + parameterName">
                     <ul>
                         <li ng-repeat="parameterValue in parameterValues">
-                            {{parameterValue}}
+                            {{parameterValue | i18n}}
                         </li>
                     </ul>
                 </div>
